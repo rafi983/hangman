@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+    />
+    <title>Frontend Mentor | Hangman game</title>
+    <meta
+      name="description"
+      content="Pick a category and guess the word in this classic Hangman game! Built with React and TypeScript using the finite state machine pattern."
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function () {
+        if (browserSupportsIsSubsetOf()) {
+          console.log('Browser supports Set.prototype.isSubsetOf');
+          return;
+        }
+
+        shimSetMethod('https://esm.run/set.prototype.issubsetof@1.1.4', (error) => {
+          if (error) {
+            throw error;
+          }
+
+          console.log('Shimmed Set.prototype.isSubsetOf');
+        });
+
+        function browserSupportsIsSubsetOf() {
+          return typeof Set.prototype.isSubsetOf === 'function';
+        }
+
+        function shimSetMethod(src, done) {
+          const js = document.createElement('script');
+          js.type = 'module';
+          js.innerHTML = `
+            import isSubsetOf from '${src}'
+            isSubsetOf.shim()
+          `;
+          js.onload = () => {
+            done();
+          };
+          js.onerror = () => {
+            done(new Error('Failed to load script ' + src));
+          };
+          document.head.appendChild(js);
+        }
+      })();
+    </script>
+  </body>
+</html>

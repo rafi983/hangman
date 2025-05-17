@@ -1,0 +1,8 @@
+[
+  { "id": "movie", "name": "Movies" },
+  { "id": "tv", "name": "TV Shows" },
+  { "id": "country", "name": "Countries" },
+  { "id": "capital", "name": "Capital Cities" },
+  { "id": "animal", "name": "Animals" },
+  { "id": "sport", "name": "Sports" }
+]

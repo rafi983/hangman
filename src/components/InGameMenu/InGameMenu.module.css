@@ -1,0 +1,68 @@
+.root {
+  --modal-x-offset: rem(25px);
+  --modal-size: 100%;
+}
+
+.content {
+  max-width: 592px;
+  height: rem(445px);
+  border-radius: rem(48px);
+  background: #344aba;
+  background: linear-gradient(180deg, #344aba 0%, alpha(#001479, 0.83) 100%);
+  box-shadow: var(--mantine-shadow-inset-modal);
+  position: relative;
+  overflow-y: unset;
+  margin-top: rem(53px);
+
+  @media (min-width: $mantine-breakpoint-xs) {
+    margin-top: rem(89px);
+  }
+}
+
+.overlay {
+  background: linear-gradient(
+    180deg,
+    alpha(#1a043a, 0.75) 0%,
+    alpha(#151278, 0.75) 70%,
+    alpha(#2b1677, 0.75) 100%
+  );
+}
+
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(34px);
+
+  & > button:first-of-type {
+    margin-top: rem(17px);
+  }
+
+  @media (min-width: $mantine-breakpoint-xs) {
+    & > button:first-of-type {
+      margin-top: rem(49px);
+    }
+  }
+}
+
+.title {
+  font-size: rem(94px);
+  line-height: 1.2;
+  letter-spacing: -0.47px;
+  color: #fff;
+  -webkit-text-stroke-width: 16px;
+  -webkit-text-stroke-color: #243041;
+  paint-order: stroke fill;
+  position: absolute;
+  top: -52px;
+  width: 100%;
+  text-align: center;
+
+  @media (min-width: $mantine-breakpoint-xs) {
+    font-size: rem(134px);
+    letter-spacing: -0.67px;
+    top: -89px;
+  }
+}

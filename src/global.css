@@ -1,0 +1,25 @@
+/* mouse-memoirs-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Mouse Memoirs';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/mouse-memoirs-v17-latin-regular.woff2') format('woff2');
+}
+
+body {
+  min-height: 100vh;
+  background: #130556;
+  background: linear-gradient(180deg, rgba(19, 5, 86, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background-image: url('/images/background-desktop.svg');
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: em(768px)) {
+    background-image: url('/images/background-tablet.svg');
+  }
+
+  @media (max-width: em(375px)) {
+    background-image: url('/images/background-mobile.svg');
+  }
+}
