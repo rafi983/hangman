@@ -33,10 +33,6 @@ Users should be able to:
 - [x] See hover and focus states for all interactive elements on the page.
 - [x] Navigate the entire game only using their keyboard.
 
-### Screenshot
-
-![](./docs/screenshot.png)
-
 
 ### Built with
 
